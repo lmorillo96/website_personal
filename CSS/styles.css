@@ -13,6 +13,10 @@
     --height-shape: 18em;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #e5e5f7;
@@ -135,7 +139,6 @@ body {
 
 .instructor__name {
     margin: 20px 0;
-
 }
 
 .instructor__tag {
@@ -165,6 +168,7 @@ body {
     display: grid;
     grid-template-columns: 5fr 4fr;
     place-items: center;
+    text-align: inherit;
 }
 
 .about__course {
@@ -193,8 +197,19 @@ body {
 
 .card__copy {
     margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: .5px;
+    line-height: 1.5;
 }
 
+.manz a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.manz a:hover {
+    color: var(--color-btn);
+}
 
 .card__container {
     width: 99%;
@@ -204,6 +219,7 @@ body {
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(4,1fr);
     gap: 20px;
+    text-align: center;
     grid-template-areas: 
     ".       card1    .    "
     "card2   card1    card3"
@@ -235,6 +251,13 @@ body {
 .card__title {
     margin: 20px 0;
     font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.card__title:hover {
+    color: var(--color-btn);
+    transform: scale(1.1);
 }
 
 .card__paragraph {
@@ -373,6 +396,35 @@ body {
     content: " leandro.m9601@gmail.com";
     color: blue;
 }
+
+/* BUTTON SCROLL */
+
+.scroll-top-btn {
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: calc(0.25rem + 1vw);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--color-primary);
+    color: var(--color-title);
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s ease-out;
+  }
+  
+  .scroll-top-btn:hover {
+    color: var(--text-btn);
+  }
+  
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
 
 @media screen and (max-width: 768px) {
     :root{
